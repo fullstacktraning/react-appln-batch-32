@@ -9,6 +9,7 @@ import External from './components/External.jsx'
 import Global from './components/Global.jsx'
 import FontAwesome from './components/FontAwesome.jsx'
 import BootStrap from './components/BootStrap.jsx'
+import State from './components/State.jsx'
 createRoot(document.getElementById('root')).render(
-   <BootStrap></BootStrap>,
+   <State></State>,
 )
