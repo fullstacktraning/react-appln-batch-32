@@ -1,0 +1,15 @@
+.parent{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.child{
+    border: 2px solid red;
+    padding: 20px;
+    border-radius: 30px;
+}
+.img{
+    width: 20vw;
+}

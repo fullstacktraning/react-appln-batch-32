@@ -11,6 +11,7 @@ import FontAwesome from './components/FontAwesome.jsx'
 import BootStrap from './components/BootStrap.jsx'
 import State from './components/State.jsx'
 import Parent1 from "./components/Parent1.jsx"
+import Parent2 from './components/Parent2.jsx'
 createRoot(document.getElementById('root')).render(
-   <Parent1></Parent1>,
+   <Parent2></Parent2>,
 )
