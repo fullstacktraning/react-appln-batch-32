@@ -10,6 +10,7 @@ import Global from './components/Global.jsx'
 import FontAwesome from './components/FontAwesome.jsx'
 import BootStrap from './components/BootStrap.jsx'
 import State from './components/State.jsx'
+import Parent1 from "./components/Parent1.jsx"
 createRoot(document.getElementById('root')).render(
-   <State></State>,
+   <Parent1></Parent1>,
 )
