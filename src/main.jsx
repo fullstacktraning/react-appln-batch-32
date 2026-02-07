@@ -12,6 +12,8 @@ import BootStrap from './components/BootStrap.jsx'
 import State from './components/State.jsx'
 import Parent1 from "./components/Parent1.jsx"
 import Parent2 from './components/Parent2.jsx'
+import Parent3 from './components/Parent3.jsx'
+import Parent4 from "./components/Parent4.jsx"
 createRoot(document.getElementById('root')).render(
-   <Parent2></Parent2>,
+   <Parent4></Parent4>,
 )
