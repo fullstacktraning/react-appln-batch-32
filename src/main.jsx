@@ -15,6 +15,7 @@ import Parent2 from './components/Parent2.jsx'
 import Parent3 from './components/Parent3.jsx'
 import Parent4 from "./components/Parent4.jsx"
 import Parent5 from './components/Parent5.jsx'
+import GetEx1 from './components/GetEx1.jsx'
 createRoot(document.getElementById('root')).render(
-   <Parent5></Parent5>,
+   <GetEx1></GetEx1>,
 )
