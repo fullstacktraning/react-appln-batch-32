@@ -20,6 +20,7 @@ import GetEx2 from './components/GetEx2.jsx'
 import GetEx3 from './components/GetEx3.jsx'
 import GetEx4 from './components/GetEx4.jsx'
 import PostEx from './components/PostEx.jsx'
+import PutEx from './components/PutEx.jsx'
 createRoot(document.getElementById('root')).render(
-   <PostEx></PostEx>,
+   <PutEx></PutEx>,
 )
