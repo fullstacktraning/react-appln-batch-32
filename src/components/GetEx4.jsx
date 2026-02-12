@@ -16,6 +16,7 @@ const GetEx4 = ()=>{
         setArr(products);
         setNum1(skip);
         setNum2(total);
+        
     }
 
     useEffect(()=>{
