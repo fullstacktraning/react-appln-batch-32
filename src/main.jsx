@@ -21,6 +21,8 @@ import GetEx3 from './components/GetEx3.jsx'
 import GetEx4 from './components/GetEx4.jsx'
 import PostEx from './components/PostEx.jsx'
 import PutEx from './components/PutEx.jsx'
+import DeleteEx from './components/DeleteEx.jsx'
+import DeleteEx1 from './components/DeleteEx1.jsx'
 createRoot(document.getElementById('root')).render(
-   <PutEx></PutEx>,
+   <DeleteEx1></DeleteEx1>
 )

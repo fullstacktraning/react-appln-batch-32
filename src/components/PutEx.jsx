@@ -1,15 +1,12 @@
 import axios from "axios";
 import { useRef,useState } from "react";
 const PutEx = ()=>{
-    
     const ref1 = useRef(null);
     const ref2 = useRef(null);
     const ref3 = useRef(null);
     const ref4 = useRef(null);
     const ref5 = useRef(null);
-
     const [res,setRes] = useState({});
-
     const put_ex = async ()=>{
         const {data} = await axios.put(`https://jsonplaceholder.typicode.com/posts/${ref1.current.value}`,
                 {
@@ -27,9 +24,6 @@ const PutEx = ()=>{
         );
         setRes(data)
     }
-
-
-
     return(
         <>
             <fieldset>
