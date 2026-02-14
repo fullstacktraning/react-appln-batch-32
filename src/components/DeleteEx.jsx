@@ -14,7 +14,7 @@ const DeleteEx=()=>{
     
     return(
         <>
-            <h1>{JSON.stringify(data)}</h1>
+            <h1>{JSON.stringify(data) }</h1>
         </>
     )
 }
