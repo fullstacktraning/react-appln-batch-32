@@ -24,6 +24,7 @@ import PutEx from './components/PutEx.jsx'
 import DeleteEx from './components/DeleteEx.jsx'
 import DeleteEx1 from './components/DeleteEx1.jsx'
 import Events from './components/Events.jsx'
+import Master from './components/Master.jsx'
 createRoot(document.getElementById('root')).render(
-   <Events></Events>
+   <Master></Master>
 )
