@@ -25,6 +25,7 @@ import DeleteEx from './components/DeleteEx.jsx'
 import DeleteEx1 from './components/DeleteEx1.jsx'
 import Events from './components/Events.jsx'
 import Master from './components/Master.jsx'
+import Test1 from './components/Test1.jsx'
 createRoot(document.getElementById('root')).render(
-   <Master></Master>
+   <Test1></Test1>
 )
