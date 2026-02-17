@@ -1,0 +1,844 @@
+Syllabus:
+
+1)Introduction
+    
+2) Components
+
+3) State
+
+4) Props
+
+5) Events Handling
+    a) click
+    b) double click
+
+6) Styles
+    External Styles
+    Internal Styles
+    Inline Styles
+    BootStrap
+    Fontawesome
+
+7) Single Page Applications
+
+8) API Calls. (Asynchronous Calls)
+    ReactJS --  Django
+    ReactJS -- Java
+    ReactJS -- AI
+    GET / POST / PUT / DELETE / ......
+
+9) State Management
+    Context API
+    Redux
+
+10) Hooks
+    useState()
+    useEffect()
+    useRef()
+    useReducer()
+    useSelector()
+    createContext()
+    useContext()
+    ---
+    ---
+    ---
+    ---
+
+    custom hook
+
+11) End to End Project
+
+12) CI/CD Pipeline. (DevOps)
+        GitHub
+        Jenkins
+        Docker
+        AWS (EC2)
+        ---
+        ---
+        ---
+
+13) AI Integration
+        ChatBot -- NLP / Gen AI --- ReactJS
+
+
+ReactJS
+*******
+    ReactJS is JavaScript library
+    ReactJS used to develop web applications
+    ReactJS released by facebook
+    Current version is "19.X"
+    ReactJS also used to develop "reusable user interfaces"
+
+Features of ReactJS
+*******************
+1) Components
+    Partition of webpage called as Component
+    As a React Developer we are able to create more than one Component
+    Components are reusable
+    React Applications are component based
+    we can provide interaction between components
+    we have two types of components
+        1) functional components
+        2) class components
+
+    in above diagram, we have following components
+    1) Master. (Parent)
+    2) Header  (Child)
+    3) LeftMenu ("")
+    4) Main ("")
+    5) RightMenu ("")
+    6) Footer("")
+
+what are the differences between functional components and class components ?
+
+                    functional components                       class components
+***************************************************************************************************************************
+1)  simple JavaScript function called as                    simple ES6 class called as class component
+    functional component
+    Ex.                                                     Ex.
+        const Master = ()=>{}                                   class Sample{}
+    where Master is the component name                      where Sample is the class component
+
+
+2) functional components are also                           class components are also called as stateful components / container
+  called as stateless components / temparary                components
+  components
+
+3) performance good (because we are able to                 performance slighly lower (because we are creating objects) 
+create objects)
+
+4) Hooks are used to enhance functional                     life cycle methods are used to enhance class components 
+   components
+
+5) Recomended in Real Time                                  Not Recomended in Real Time
+***************************************************************************************************************************
+
+
+2) JSX
+    JSX Stands for JavaScript and XML
+    JSX, used to develop "React Applications"
+    JSX files extension must be ".jsx"
+    in JSX, we will include "HTML Code to JavaScript Code"
+    Babel is the transpiler, used to convert "JSX to Equalent JS"
+
+what is Babel ? 
+    Babel is the transpiler
+    Babel, used to convert JSX to Equalent JS
+    Babel also used to convert latest JavaScript to old JavaScript
+                                (ES6 --  ES5)
+
+    Note:
+            transpiler converts JavaScript to JavaScript
+                                (latest)        (old)
+            compiler converts one language to another language
+                                TypeScript - JavaScript
+
+
+what are the differences between JSX and TSX ?
+
+*********************************************************************************************************************
+                        JSX                                         TSX
+*********************************************************************************************************************
+
+1) JSX Stands for JavaScript XML                                TypeScript Stands for TypeScript XML
+
+2) extension must be ".jsx"                                     Extension must be ".tsx"
+
+3) we will include HTML Code to                                 we will include HTML Code to TypeScript Code 
+   JavaScript Code
+
+4) No TypeSafety                                                With TypeSafety
+
+5) Runtime Errors                                               Compile Time Errors
+
+Syntax.                                                         Syntax.
+    let x = "CareerIT";                                             let x:string = "CareerIT"
+
+*********************************************************************************************************************
+
+3) state
+        state used to represent component data
+        state is mutable
+
+functional components
+*********************
+    useState() is the predefined hook, used to define state in functional components
+    Ex.
+         const [msg,setMsg] = useState(`MERN`);
+         {msg}      //MERN
+         setMsg(`MERN Stack`);
+         {msg}      //MERN Stack
+
+         const [num1,setNum1] = useState(200);
+         const [num2,setNum2] = useState(100);
+         {num1+num2}                //300
+         {Math.sqrt(num1)}          //14.1421356237
+         {num1-num2}                //100
+
+        const [flag,setFlag] = useState(true);
+        {
+            flag ? {num1} : {num2}
+        }
+
+        {
+            !flag ? {num1} : {num2}
+        }
+        
+        const [login,setLogin] = useState(true);
+        {
+            login ? <Dashboard></Dashboard> : <Login></Login>
+        }
+
+        const [list1,setList1] = useState( [100,200,300,400,500] );
+        {
+            list1.map((element,index)=>{
+                retutn(<p key={index}>{element}</p>)
+            })
+        }
+        const [list2,setList2] = useState( [`Frontend`,`Backend`,`DataBase`,`DevOps`,`AI Tools`] );
+
+        const [obj,setObj] = useState({key1:`Hello`,key2:`ReactJS`,`key3`:`NodeJS`});
+        Sol1:
+            {obj.key1}
+            {obj.key2}
+            {obj.key3}
+
+        Sol2:
+            const {key1,key2,key3} = obj;
+            {key1}
+            {key2}
+            {key3}
+
+        const [obj1,setObj1] = useState({frontend:`ReactJS`,backend:`NodeJS`,database:`MongoDB`,`DevOps`:`AWS`});
+
+    
+        const [emps,setEmps] = useState( [{eno:111,ename:`Emp1`,esal:10000},
+                                          {eno:222,ename:`Emp2`,esal:20000},
+                                          {eno:333,ename:`Emp3`,esal:30000},
+                                          {eno:444,ename:`Emp4`,esal:40000},
+                                          {eno:555,ename:`Emp5`,esal:50000}] );
+        <table>
+            ---
+            ---
+            ---
+            {
+                emps.map((element,index)=>{
+                    retutn(<tr key={index}>
+                        <td>{element.eno}</td>
+                        <td>{element.ename}</td>
+                        <td><i className="fa fa-inr"></i> {element.esal}</td>
+                    </tr>)
+                })
+            }
+            ---
+            ---
+            ---
+        </table>
+
+        const [laptops,setLaptops] = useState( [{pid:111,pname:`DELL`,pcost:10000,discount:`10%`},
+                                                {pid:222,pname:`Hp`,pcost:20000,discount:`20%`},
+                                                {pid:333,pname:`Acer`,pcost:30000,discount:`30%`},
+                                                {pid:444,pname:`Lenovo`,pcost:40000,discount:`40%`},
+                                                {pid:555,pname:`MI`,pcost:60000,discount:`60%`},
+                                                {pid:666,pname:`Mac`,pcost:50000,discount:`50%`}] );
+
+state in class components
+*************************
+
+        this.state = {
+            key1 : `CareerIT`,
+            key2 : 100,
+            key3 : true,
+            key4 : [10,20,30,40,50]
+        };
+
+        <p>{this.state.key1}</p>        //CareerIT
+        <p>{this.state.key2}</p>        //100
+        {
+            key3 ? <p>{this.state.key1}</p> : <p>{this.state.key2}</p>
+        }
+        {
+            !key3 ? <p>{this.state.key1}</p> : <p>{this.state.key2}</p>
+        }
+        {
+            this.state.key4.map((element,index)=>{
+                retutn(<p key={index}>{element}</p>)
+            })
+        }
+
+
+Revision
+********
+
+state
+*****
+    state representing component data
+    state is mutable
+    when ever state changes component automatically "re-render"
+    state updates are "asynchronous operations"
+    state also called as predefined object
+
+state in functional components
+******************************
+    useState() is the predefined hook, used to define state in functional component
+Ex.
+    string
+    ******
+    const [str,setStr] = useState(`React`);
+    <p>{str}</p>  //React
+    setStr(`ReactJS`);
+    <p>{str}</p>    //ReactJS
+
+    number
+    ******
+    const [num1,setNum1] = useState(200);
+    const [num2,setNum2] = useState(100);
+    <p>{num1}</p>       //200
+    <p>{num2}</p>       //100
+    <p>Addition. {num1+num2}</p>.   //300
+    <p>Subtraction. {num1-num2}</p> //100
+    //multi
+    //div
+    //square of a num1
+    //cube of a num2
+
+    boolean
+    *******
+    const [flag,setFlag] = useState(true);
+    const [flag1,setFlag1] = useState(false);
+    {
+        flag ? <p>{num1}</p> : <p>{num2}</p>   
+    }
+    {
+        !flag ? <p>{num1}</p> : <p>{num2}</p>   
+    }
+    {
+        flag1 ? <p>{num1}</p> : <p>{num2}</p>   
+    }
+    {
+        !flag1 ? <p>{num1}</p> : <p>{num2}</p>   
+    }
+    {
+        flag ? <Dashboard></Dashboard> : <Login></Login>
+    }
+    {
+        !flag ? <Dashboard></Dashboard> : <Login></Login>
+    }
+
+    list
+    ****
+        we will represent list with the help of "[]"
+        we will iterate list with the help of "map()"
+
+        const [list1,setList1] = useState( [10,20,30,40,50] );
+        {
+           list1.map((element,index)=>{
+                retutn(<p key={index}>{element}</p>)
+           }) 
+        }
+
+        Note : "key" used to track the list elements
+
+        const [list2,setList2] = useState( [`HTML`,`CSS`,`JavaScript`,`React`,`NodeJS`] );
+
+
+
+
+
+
+        const [list3,setList3] = useState([`Hello`,100,true,undefined,null]);
+
+        object
+        ******
+        const [obj1,setObj1] = useState( {key1:`Frontend`,key2:`Backend`,key3:`DataBase`} ); 
+        Sol1:
+            <p>{obj1.key1}</p>
+            <p>{obj1.key2}</p>
+            <p>{obj1.key3}</p>
+
+        Sol2:
+            const {key1,key2,key3} = obj1;
+            <p>{key1}</p>
+            <p>{key2}</p>
+            <p>{key3}</p>
+
+        const [obj2,setObj2] = useState({num1:300,num2:200,num3:100});
+
+        list of objects
+        ***************
+        const [emps,setEmps] = useState( [{eno:111,ename:`Emp1`,esal:10000},
+                                          {eno:222,ename:`Emp2`,esal:20000},
+                                          {eno:333,ename:`Emp3`,esal:30000},
+                                          {eno:444,ename:`Emp4`,esal:40000},
+                                          {eno:555,ename:`Emp5`,esal:50000}] );
+
+        <table>
+            ---
+            ---
+            ---
+            ---
+            {
+                emps.map((element,index)=>{
+                    retutn(<tr key={index}>
+                        <td>{element.eno}</td>
+                        <td>{element.ename}</td>
+                        <td><i className="fa fa-inr"></i> {element.esal}</td>
+                    </tr>)
+                })
+            }
+        
+        </table>
+
+        const [products,setProducts] = useState( [{pid:111,pname:`Laptop`,pcost:10000,pdisc:`10%`},
+                                                  {pid:222,pname:`Tab`,pcost:20000,pdisc:`20%`}] );
+
+
+state in class component
+************************
+    this.state = {                      
+        str : `ReactJS`,
+        num : 100,
+        flag : true,
+        list : [1000,2000,3000,4000,5000],
+        obj = {key1:`Hello`},
+        watches : [{name:`Fasttrack`,cost:5000},
+                   {name:`Apple`,cost:100000}]
+    };
+    
+    <p>{this.state.str}</p>.  //ReactJS
+    this.setState({
+        str : `ReactJS 19.x`
+    });
+    <p>{this.state.str}</p>     //ReactJS 19.x
+
+    <p>{this.state.num}</p>     //100
+    this.setState({
+        num : 1000
+    });
+    <p>{this.state.num}</p>     //1000
+
+    {
+        this.state.flag ? {this.state.str} : {this.state.num}
+    }
+
+    {
+        !this.state.flag ? {this.state.str} : {this.state.num}
+    }
+
+
+Expression
+**********
+    {} are used to represent Expression
+    Expression used to display results/output
+
+Interpolation
+*************
+    including Expression to JSX called as Interpolation
+    Ex.
+
+        <h1>Addition {10+10}</h1>
+
+props
+*****
+    props is the predefined object
+    Child component receives the data from Parent component with the help of props
+    props are immutable
+
+what are the differences state and props ?
+
+**************************************************************************************************
+            state                                       props
+**************************************************************************************************
+
+state representing                              child component receives data from parent component
+component data                                  with the help of props
+
+state is mutable                                props are immutable
+
+when ever state changes                         when ever props changes automatically component
+automatically component                         will re-render
+will re-render
+**************************************************************************************************
+
+single page applications
+************************
+    loading "one component" to "another component" without refreshing/reloading called as single page application
+                    (or)
+    updating webpage content without refreshing/reloading called as single page application
+
+
+    <Route></Route> is the predefined component, used to implement the "Routing"
+    <Routes></Routes> is the predefined component used to encapsulate the "Routings"
+    <BrowserRouter></BrowserRouter> used to handle Dynamic Routing
+    <HashRouter></HashRouter> used to handle static routing
+    useParams() is the predefined hook, used to read routing parameters
+    useNavigate() is the predefined hook, used to navigate from one component to another component with event
+    <Link></Link> is the predefined component, used to create the "Routing Link"
+
+what is routing ?
+    navigation between one component to another component in single page applications called as routing
+
+what is dynamic routing ?
+    dynamic routing means creating routes with parameters so that same component will show different 
+    data based on the URL
+
+what is static routing ?
+    static routing means defining fixed routes that always shows same content wont varies based on 
+    URL parameters
+
+how to represent default routing ?
+    "/" used to represent the default routing
+
+how to represent unknown routing/wild routing ?
+    "*" used to represent the unknown routing/wild routing
+
+which library required to implement single page applications ?
+
+    "react-router-dom" is the library uses to implement the single page applications
+    we will download above library with the help of either "npm" or "yarn"
+    npm stands for node packaging manager
+    Ex.
+        npm install react-router-dom
+            (or)
+        yarn add react-router-dom
+
+what are the differences between single page applications and multi page applications ?
+
+
+***************************************************************************************************
+                    SPA                                     MPA
+***************************************************************************************************
+1) only one html page                               1) more than one html page
+
+2) CSR (client side rendering)                      2) SSR (server side rendering)
+
+3) content updates without refreshing               3) content updates with refreshing
+
+4) Faster                                           4) Slow
+
+5) Not SEO Friendly                                 5) SEO Friendly
+
+6) Ex.                                              6) Ex.  PHP
+        React                                               JSP
+        Angular                                             
+        VueJS
+****************************************************************************************************
+
+what are the differences between npm and yarn ?
+
+
+**************************************************************************************************
+            npm                                     yarn
+**************************************************************************************************
+1) npm used to download                             yarn also used to download libraries
+   the libraries
+   Ex.                                              Ex.
+    npm install react-router-dom                        yarn add react-router-dom
+
+2) npm given by NodeJS                              yarn given by facebook
+
+3) npm is little slower                             yarn is little faster compared to npm
+   compared to yarn
+
+4) network required to install                      in offline also able to install downloaded
+   downloaded libraries                             libraries
+
+**************************************************************************************************
+
+state management
+****************
+    sharing data from source component to destination component through several inter dependent components called as
+    props drilling
+
+    state management used to overcome props drilling
+
+    we will implement state management in two ways
+    1) Context API
+    2) Redux
+
+    what are the differences between Context API & Redux ?
+
+    **************************************************************************************************
+            Context API                                 Redux
+    **************************************************************************************************
+    1) Context API given by facebook                Redux provided by 3rd party
+       (vendor)     
+
+    2) No need to download any libraries,           need to download libraries, automatically
+       so build size wont increase                  build size increases
+
+    3) suitable for static data                     suitable for dynamic data
+
+    4) suitable for small scale web applications.   suitable for medium & large scale web applications
+
+    5) Debugging Difficult                          Debugging is Eazy, because Redux supports tools
+                                                    Ex.
+                                                            redux-toolkit
+    **************************************************************************************************
+
+    what are middlewares ?
+        middlewares intercepts the requests before reaching the servers
+        middlewares can cancel the requests
+        middlewares can create new requests
+        redux supports two middlewares
+        1) Thunk
+        2) Saga
+
+
+virtual dom
+***********
+
+
+1) download and install NodeJS
+    website : https://nodejs.org/en/download
+    > node --version
+
+Explain vite ?
+    vite is the modern tool, used to build Applications like
+    React
+    Angular
+    VueJS
+    VennillaJS
+    ---
+    ---
+    ---
+
+    vite tool supports HMR (Hot Module Replacement)
+    reloads only changed module insted of all other modules called as HMR
+
+Explain Bun ?
+    Bun is the very fast tool for JavaScript applications
+    Bun is the all-in-one tool
+    Bun = NodeJS + npm + build tools
+
+    Advantages
+
+    1) able to run both JavaScript and TypeScript
+    2) able to install required packages
+    3) able to build applications
+    4) able to write test cases
+
+step 1.
+open powershell in administrator mode
+> wsl --install
+    Note : restart laptop
+step 2.
+    GET ubuntu
+    start -> ubuntu -> get
+    set username & password
+    username : careerit
+    password : careerit
+    
+
+step 3.
+    install unzip
+    > sudo apt update
+    > sudo apt install unzip -y
+
+step 4.
+    install bun
+    curl -fsSL https://bun.sh/install | bash
+    source ~/.bashrc
+
+step 5.
+    bun version
+        bun --version
+
+
+> npm create vite@latest
+1) do you want to proceed (y)
+
+2) project name
+    react-appln
+
+3) choose framework
+    react
+
+4) select varient
+    JavaScript
+
+5) rolldown (No)
+
+6) install packages (y)
+
+7) press "o" and enter
+
+Directory Structure
+*******************
+1) node_modules
+    node_modules containes "libraries/modules"
+    these libraries helps to "create and execute" react applications
+    below command used to install libraries
+    > npm install
+
+2) public
+    it is used to deploy static resources
+    Ex.
+        images
+        audio
+        video
+        xml files
+        text files
+        ---
+        ---
+        ---
+    these resources are accessable in public
+
+    vite.svg is the default image in public directory
+
+3) src
+    used to deploy coding files
+    Ex.
+        components
+        routing files
+        api calls
+        ---
+        ---
+        ---
+
+4) src / assets
+    used to deploy static resources like
+    images
+    audio
+    video
+    pdf files
+    ---
+    ---
+    ---
+    these resources are accessable with in the react application
+    these resources are optimized while using
+    these resources are recomended while developing react applications
+
+5) src / App.jsx
+         App.css
+        
+        when ever we create react application, App component is the default component
+        App.css file is the style sheet for App component
+
+6) src / index.css
+        index.css file called as global style sheet
+        these styles applicable to all components in react applications
+
+7) src / main.jsx
+    main.jsx file also called as "module file" in react
+    main.jsx file used to link component to div whose id is root available 
+    in index.html file
+
+8) eslint.config.js
+    used to verify and checks the code with respect to JavaScript standards
+
+9) index.html
+    react library starts the extension from index.html file
+    index.html file containes "div" whose id is "root"
+
+10) package-lock.json
+    used to lock the libraries versions
+    
+11) package.json
+    containes libraries information
+    able to download latest versions
+
+12) vite.config.js
+    this file representing vite tool configuration file
+
+
+    "axios" is the 3rd party library, used to make asynchronous calls (API Calls)
+    Ex.
+        GET
+        POST
+        PUT
+        DELETE
+        ---
+        ---
+        ---
+    
+    we will download "axios" library with the help of "npm" / "yarn"
+    > npm install axios
+
+    useEffect() is the predefined hook, used to make api calls
+    useEffect() hook will execute after return()
+    useEffect() hook will execute only once
+
+    https://jsonplaceholder.typicode.com/users
+    
+
+
+    https://jsonplaceholder.typicode.com/posts  POST
+
+    {
+          title: "Test Title",
+          body: "This is a dummy post request",
+          userId: 1
+    }
+
+     {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer dummy_token_123"
+          }
+    }
+
+
+    https://jsonplaceholder.typicode.com/posts/1            PUT
+     {
+          id: 1,
+          title: "Updated Title",
+          body: "This content is updated using PUT",
+          userId: 1
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer dummy_token_123"
+          }
+        }
+
+step 1.
+    create react application
+
+    Ex.
+            react-redux-ex
+
+step 2.
+    download below libraries
+        1) axios
+            used to make api calls
+        2) react-redux
+            used to integrate react to redux
+        3) @reduxjs/toolkit
+            used to simplify redux application
+            used to overcome boiler plate code
+            debugging is eazy with redux toolkit
+
+    > cd react-redux-ex
+    > npm i axios react-redux @reduxjs/toolkit
+
+3) make api call
+            /*******************/
+            src
+                api
+                    api.js
+            /*******************/
+
+4) create slice
+        /*******************/
+            src
+                slice
+                    slice.js
+        /*******************/
+
+5) deploy reducer to store
+        /********************/
+        src
+            store
+                store.js
+        /********************/
+
+6) make "store" available to "App" component
+
+        main.jsx
+
+7) perform "dispatch" and "subscribe" in "App" Component
+
+            useDispatch(). -- dispatch operation
+            useSelector(). -- subscribe operation
