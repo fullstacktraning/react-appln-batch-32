@@ -26,6 +26,7 @@ import DeleteEx1 from './components/DeleteEx1.jsx'
 import Events from './components/Events.jsx'
 import Master from './components/Master.jsx'
 import Test1 from './components/Test1.jsx'
+import ResumeAnalyzer from './components/ResumeAnalyser.jsx'
 createRoot(document.getElementById('root')).render(
-   <Test1></Test1>
+   <ResumeAnalyzer></ResumeAnalyzer>
 )
