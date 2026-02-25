@@ -27,6 +27,7 @@ import Events from './components/Events.jsx'
 import Master from './components/Master.jsx'
 import Test1 from './components/Test1.jsx'
 import ResumeAnalyzer from './components/ResumeAnalyser.jsx'
+import CustomHook from './components/CustomHook.jsx'
 createRoot(document.getElementById('root')).render(
-   <ResumeAnalyzer></ResumeAnalyzer>
+   <CustomHook></CustomHook>
 )
