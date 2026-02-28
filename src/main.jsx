@@ -28,6 +28,8 @@ import Master from './components/Master.jsx'
 import Test1 from './components/Test1.jsx'
 import ResumeAnalyzer from './components/ResumeAnalyser.jsx'
 import CustomHook from './components/CustomHook.jsx'
+import UseMemoHook from './components/UseMemoHook.jsx'
+import FormsEx from './components/FormsEx.jsx'
 createRoot(document.getElementById('root')).render(
-   <CustomHook></CustomHook>
+   <FormsEx></FormsEx>
 )
